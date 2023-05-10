@@ -27,6 +27,24 @@ mascotasRouter.route('/create').get((req, res) => {
 mascotasRouter.route('/mascotas').get((req, res) => {
     res.render('mascotas/mascotas', {});
 });
+mascotasRouter.route('/lista').get(async (req, res) => {
+    const mascotas = await sql`
+select 
+codigo_mas,
+nombre_mas,
+raza_mas,
+color_mas,
+peso_mas,
+edad_mas,
+enfermedades_mas,
+ciudad_mas,
+discapacidades_mas,
+foto_mas,
+id_ref	
+from mascotas`
+    res.render('mascotas/list_mascotas', { mascotas });
+});
+
 
 mascotasRouter.route('/store').post(async (req, res) => {
     const body = req.body;
@@ -37,6 +55,7 @@ mascotasRouter.route('/store').post(async (req, res) => {
         console.error(error);
         res.status(500).send('Error al guardar la mascota');
     }
+    res.redirect('/mascotas')
 });
 
 mascotasRouter.route('/edit/:codigo_mas').get((req, res) => {
@@ -47,6 +66,16 @@ mascotasRouter.route('/edit/:codigo_mas').get((req, res) => {
     })
 
 });
+
+mascotasRouter.route('/delete/:codigo_mas').post((req, res) => {
+    const codigo_mas = req.params.codigo_mas;
+    getMascotacodigo(codigo_mas).then(async(mascota) => {
+        const codigo_mas = req.params.codigo_mas;
+        await sql`DELETE FROM mascotas WHERE codigo_mas = ${codigo_mas}`;
+        res.redirect('/mascotas/lista');
+    })
+});
+
 
 mascotasRouter.route('/update/:codigo_mas').post(async (req, res) => {
     const codigo_mas = req.params.codigo_mas
@@ -96,4 +125,7 @@ export async function store(body) {
     return mascotas;
 
 }
+
+
+
 export default mascotasRouter;

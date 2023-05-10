@@ -26,11 +26,17 @@ personasRouter.route('/store').post(async (req, res) => {
     const body = req.body;
     try {
         const resultado = await store(body);
-        res.json(resultado);
-    } catch (error) {
+            req.login(resultado[0],() => {
+            res.redirect('/personas/profile');
+    }); 
+        }catch (error) {
         console.error(error);
         res.status(500).send('Error al guardar la persona');
     }
+});
+
+personasRouter.route('/profile').get ((req, res) => {
+    res.json(req.user);
 });
  
   export async function store(body) {
@@ -44,10 +50,75 @@ personasRouter.route('/store').post(async (req, res) => {
         'direccion_per',
         'ciudad_per',
         'telefono_per',       
-        'foto_mas')};`;
+        'foto_mas',
+        'username')}
+        returning username;`;
         console.log("persona ingresada");
     return personas;
    
 }
 
+personasRouter.route('/lista').get(async (req, res) => {
+    const personas = await sql`
+select 
+cedula_per,
+nombre_per,
+ocupacion_per,
+ingresos_per,
+direccion_per,
+ciudad_per,
+telefono_per,
+correo_per,
+cantidad_per,
+foto_mas
+from personas`
+    res.render('personas/list_personas', { personas });
+    console.log(personas);
+});
+
+personasRouter.route('/edit/:cedula_per').get((req, res) => {
+    const cedula_per = req.params.cedula_per;
+    getPersonacedula(cedula_per).then((persona) => {
+        console.log(persona)
+        res.render('personas/edit', { persona: persona[0] });
+    })
+
+});
+
+export async function getPersonacedula(cedula_per) {
+    const personas= await sql`
+    select *
+    from personas where cedula_per = ${cedula_per};`
+        ;
+    return personas;
+}
+
+personasRouter.route('/delete/:cedula_per').post((req, res) => {
+    const cedula_per = req.params.cedula_per;
+    getPersonacedula(cedula_per).then(async(persona) => {
+        const cedula_per = req.params.cedula_per;
+        await sql`DELETE FROM personas WHERE cedula_per = ${cedula_per}`;
+        res.redirect('/personas/lista');
+    })
+});
+
+    personasRouter.route('/update/:cedula_per').post(async (req, res) => {
+    const cedula_per = req.params.cedula_per
+    const personas = await sql`
+        update personas set
+        ${sql(req.body,
+        'cedula_per',
+        'nombre_per',
+        'ocupacion_per',
+        'ingresos_per',
+        'direccion_per',
+        'ciudad_per',
+        'telefono_per',
+        'correo_per',
+        'foto_mas',
+        )}
+    where cedula_per = ${cedula_per};`;
+    res.redirect('/personas/lista')
+   
+})
 export default personasRouter;

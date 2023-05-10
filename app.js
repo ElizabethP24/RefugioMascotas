@@ -8,6 +8,9 @@ import personas from './src/data/personas.json' assert {type: "json"};
 import mascotasRouter from './src/routers/mascotasRouter.js';
 import personasRouter from './src/routers/personasRouter.js';
 import sql from './config/database.js';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
+import passportConfig from './config/passport.js';
 //import nodemon from './src/nodemon.js';
 import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config()
@@ -21,9 +24,13 @@ const mascotaRouter = express.Router();
 app.use(express.static(path.join(dirname('.'),'/public/')));
 app.use(morgan('tiny'));
 app.use(express.urlencoded({extended: false}));
+app.use(cookieParser());
+app.use(session({secret : 'segurity'}));
 
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
+
+passportConfig(app);
 
 app.use('/mascotas', mascotasRouter)
 app.use('/personas', personasRouter)
@@ -44,6 +51,8 @@ app.get('/blog', (req, res) => {
 app.get('/servicios', (req, res) => {
   res.render('servicios');
 });
+
+
 
 app.listen(5000, () => {
   debugApp(`Listening on port ${chalk.green(PORT)}`);

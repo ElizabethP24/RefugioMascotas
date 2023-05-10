@@ -1540,16 +1540,18 @@ pre code {
 
 .table th,
 .table td {
-  padding: 0.75rem;
+  padding: 0.48rem;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
+ 
 }
 
 .table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
+  
 }
-
+a
 .table tbody + tbody {
   border-top: 2px solid #dee2e6;
 }
@@ -2376,6 +2378,12 @@ fieldset:disabled a.btn {
   border-color: #c2d30d;
 }
 
+.custom-link {
+  font-size: 16px;  /* Tamaño de fuente */
+  padding: 10px 20px;  /* Espacio interno (padding) en la etiqueta */
+  margin-top: 20px;  /* Espacio superior (margin) */
+
+}
 .btn-primary:hover {
   color: #fff;
   background-color: #e84a15;

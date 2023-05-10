@@ -93,7 +93,7 @@
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="/" class="nav-item nav-link active">Inicio</a>
+                        <a href="/" class="nav-item nav-link">Inicio</a>
                         <a href="/about" class="nav-item nav-link">Acerca de Nosotros</a>
                         <a href="/servicios" class="nav-item nav-link">Servicios</a>
                         <a href="/mascotas" class="nav-item nav-link">Mascotas</a>
@@ -105,7 +105,7 @@
                                 <a href="single.html" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div>-->
-                        <a href="/personas/create" class="nav-item nav-link">Registrarse</a>
+                        <a href="/personas/create" class="nav-item nav-link active">Registrarse</a>
                         <a href="/mascotas/create" class="nav-item nav-link">Registrar Mascota</a>
                     </div>
                 <a href="" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Solicitar Adopción</a>
@@ -124,7 +124,7 @@
         <div class="col-12 col-sm-8 mb-5">
             <div class="contact-form">
                 <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate" action="/mascotas/store" method="POST">
+                <form name="sentMessage" id="contactForm" novalidate="novalidate" action="/personas/store" method="POST">
                     <div class="control-group">
                         <input type="text" class="form-control p-4" id="name"  name="nombre_per" placeholder="Nombre" required="required" data-validation-required-message="Por favor ingresar nombre" />
                         <p class="help-block text-danger"></p>
@@ -159,6 +159,14 @@
                     </div>
                     <div class="control-group">
                         <input type="text" class="form-control p-4" id="telephone" name="foto_mas" placeholder="Foto" required="required" data-validation-required-message="Por favor ingrese su foto" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="control-group">
+                        <input type="text" class="form-control p-4" id="username" name="username" placeholder="Usuario" required="required" data-validation-required-message="Por favor ingrese un usuario" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="control-group">
+                        <input type="text" class="form-control p-4" id="password" name="password" placeholder="Contraseña" required="required" data-validation-required-message="Por favor ingrese una contraseña" />
                         <p class="help-block text-danger"></p>
                     </div>
                   

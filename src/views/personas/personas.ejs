@@ -93,11 +93,11 @@
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="/" class="nav-item nav-link active">Inicio</a>
+                        <a href="/" class="nav-item nav-link ">Inicio</a>
                         <a href="/about" class="nav-item nav-link">Acerca de Nosotros</a>
                         <a href="/servicios" class="nav-item nav-link">Servicios</a>
                         <a href="/mascotas" class="nav-item nav-link">Mascotas</a>
-                        <a href="/personas" class="nav-item nav-link">Voluntarios</a>
+                        <a href="/personas" class="nav-item nav-link active">Voluntarios</a>
                         <a href="/blog"class="nav-item nav-link">Blog</a>
                         <!-- <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
@@ -122,9 +122,10 @@
             <h1 class="display-4 m-0">Personas <span class="text-primary">Que han dejado Huella</span></h1>
         </div>
         <div class="owl-carousel testimonial-carousel">
+            <% personas.map((personas,index)=> { %>
              <div class="bg-white mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <% personas.map((personas,index)=> { %>
+                      
                         <img class="img-fluid" src="<%= personas.foto_mas %>" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
                             <h5><%= personas.nombre_per %></h5>
@@ -136,13 +137,17 @@
                             <i><%= personas.correo_per %> </i>
                         </div>
                     </div>
-                                  
-          <% }) %>
                 </div>
+                <% }) %>
               </div>
-    </div>
-</div>
+          </div>
+
+
 <!-- Testimonial End -->
+
+
+
+<a href="/personas/lista"  class="btn btn-primary py-3 px-5" style="border-radius: 0;">Lista Personas</a>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">

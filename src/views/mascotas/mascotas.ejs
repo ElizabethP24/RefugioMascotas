@@ -94,10 +94,10 @@
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="/" class="nav-item nav-link active">Inicio</a>
+                            <a href="/" class="nav-item nav-link">Inicio</a>
                             <a href="/about" class="nav-item nav-link">Acerca de Nosotros</a>
                             <a href="/servicios" class="nav-item nav-link">Servicios</a>
-                            <a href="/mascotas" class="nav-item nav-link">Mascotas</a>
+                            <a href="/mascotas" class="nav-item nav-link active">Mascotas</a>
                             <a href="/personas" class="nav-item nav-link">Voluntarios</a>
                             <a href="/blog"class="nav-item nav-link">Blog</a>
                             <!-- <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -121,13 +121,12 @@
             <h4 class="text-secondary mb-3">Conoce las mascotas que buscan hogar</h4>
             <h1 class="display-4 m-0">Adopta<span class="text-primary">Felicidad</span></h1>
         </div>
-        <% mascotas.map((mascota,index)=> { %>
         <div class="row">
+            <% mascotas.map((mascota,index)=> { %>
             <div class="col-lg-4 mb-4">
                 <div class="card border-0">
                     <div class="card-header position-relative border-0 p-0 mb-4">
-                       
-                        <img class="card-img-top" src="<%= mascota.foto_mas %>" alt="">
+                       <img class="card-img-top" src="<%= mascota.foto_mas %>" alt="">
                         <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100" style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
                             <h3 class="text-primary mb-3"><%= mascota.nombre_mas %> </h3>
                             <h1 class="display-4 text-white mb-0">
@@ -149,18 +148,19 @@
                         </ul>
                     </div>
                     <div class="card-footer border-0 p-0">
-                        <a href="/mascotas/edit/<%= mascota.codigo_mas %>" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Editar</a>
-                        <a href="" class="btn btn-secondary btn-block p-3" style="border-radius: 0;">Borrar</a>
-                    </div>
+                        <a href="" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Adoptar</a>
+                      </div>
                 </div>
             </div>
-            <% }) %>
-                </div>
+             <% }) %> 
             </div>
-        </div>
+        </div> 
+
     </div>
 </div>
 <!-- Pricing Plan End -->
+
+<a href="/mascotas/lista"  class="btn btn-primary py-3 px-5" style="border-radius: 0;">Lista Mascotas</a>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
@@ -224,7 +224,10 @@
         </div>
      <!-- Footer End -->
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <div>
+      
+    </div>
+   
 
 
     <!-- JavaScript Libraries -->
