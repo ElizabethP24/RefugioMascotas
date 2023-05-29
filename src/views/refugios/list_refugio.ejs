@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Adopta un peludito</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <style>
+        .message-container {
+            display: inline-block;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .message-container img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .message {
+            display: none;
+        }
+    </style>
+
+
+    <!-- Favicon -->
+    <link href="/img/descarga.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-2 px-lg-5">
+            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-white px-3" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-white px-3" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-white px-3" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-white px-3" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-white pl-3" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row py-3 px-lg-5">
+            <div class="col-lg-4">
+                <a href="" class="navbar-brand d-none d-lg-block">
+                    <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">Más</span>Amor</h1>
+                    <!--<img  src="img/logo1.png" width="160" height="100" alt="">-->
+                </a>
+            </div>
+            <div class="col-lg-8 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <div class="d-inline-flex flex-column text-center pr-3 border-right">
+                        <h6>Whatsapp</h6>
+                        <p class="m-0">3200000000</p>
+                    </div>
+                    <div class="d-inline-flex flex-column text-center px-3 border-right">
+                        <h6>Correo</h6>
+                        <p class="m-0">adoptaamor@gmail.com</p>
+                    </div>
+                    <div class="d-inline-flex flex-column text-center pl-3">
+                        <h6>Teléfono</h6>
+                        <p class="m-0">+012 345 6789</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span
+                        class="text-primary">Safety</span>First</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto py-0">
+                        <a href="/" class="nav-item nav-link">Inicio</a>
+                        <a href="/about" class="nav-item nav-link">Acerca de Nosotros</a>
+                        <a href="/mascotas" class="nav-item nav-link">Mascotas</a>
+                        <a href="/personas" class="nav-item nav-link">Voluntarios</a>
+                        <a href="/blog" class="nav-item nav-link">Blog</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrarse</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/personas/create"  class="dropdown-item">Personas</a>
+                                <a href="/refugios/create" class="dropdown-item">Refugios</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/mascotas" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Solicitar Adopción</a>
+                </div>
+
+                <style>
+                    .message-container img {
+                        width: 35px;
+                        /* Ajusta el tamaño según tus necesidades */
+                        height: 35px;
+                        /* Ajusta el tamaño según tus necesidades */
+                    }
+                </style>
+    
+                <div class="message-container">
+                    <a href="/login">
+                        <img src="/img/inicio.png" onmouseover="showMessage('iniciar-sesion')"
+                            onmouseout="hideMessage('iniciar-sesion')">
+                    </a>
+                    <div class="message" id="message-iniciar-sesion">Iniciar sesión</div>
+                </div>
+    
+                <div>
+                    <div class="message-container">
+                        <a href="/personas/create">
+                            <img src="/img/Nuevo.png" onmouseover="showMessage('crear-usuario')"
+                                onmouseout="hideMessage('crear-usuario')">
+                        </a>
+                        <div class="message" id="message-crear-usuario">Crear Usuario</div>
+                    </div>
+    
+                    <div class="message-container">
+                        <a href="/perfil">
+                            <img src="/img/perfil.png" onmouseover="showMessage('perfil')"
+                                onmouseout="hideMessage('perfil')">
+                        </a>
+                        <div class="message" id="message-perfil">Perfil</div>
+                    </div>
+    
+    
+    
+                    <script>
+                        function showMessage(identifier) {
+                            var message = document.getElementById("message-" + identifier);
+                            message.style.display = "block";
+                        }
+    
+                        function hideMessage(identifier) {
+                            var message = document.getElementById("message-" + identifier);
+                            message.style.display = "none";
+                        }
+                    </script>
+    
+                </div>
+            </nav>
+        </div>
+    <!-- Navbar End -->
+
+    <div class="container-fluid pt-5">
+        <div class="d-flex flex-column text-center mb-5 pt-5">
+            <h4 class="text-secondary mb-3">Refugios Registrados</h4>
+        </div>
+
+        <!-- Table -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 mb-5">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">NIT</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Contraseña</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% refugios.map((refugio,index)=> { %>
+                            <tr>
+                                <td>
+                                    <%= refugio.id_ref %></td>
+                                <td>
+                                    <%= refugio.nombre_ref %></td>
+                                <td>
+                                    <%= refugio.nit_ref %></td>
+                                <td>
+                                    <%= refugio.direccion_ref %></td>
+                                <td>
+                                    <%= refugio.ciudad_ref %></td>
+                                <td>
+                                    <%= refugio.correo_ref %></td>
+                                <td>
+                                    <%= refugio.telefono_ref %></td>
+                                <td>
+                                    <%= refugio.usuario_ref %></td>
+                                <td>
+                                    <%= refugio.contraseña_ref %></td>
+                                    <td>
+                                    <a href="/refugios/edit/<%= refugio.id_ref %>"
+                                        class="btn btn-primary btn-block p-3" style="border-radius: 0;">Editar</a>
+                                         <form action="/refugios/delete/<%= refugio.id_ref %>" method="POST">
+                                            <input class="btn btn-primary btn-block p-3" style="border-radius: 0;" type="submit" name="_method" value="Eliminar">
+                                           
+                                          </form>
+                                    </td>
+                                </tr>
+                                <% }) %> 
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+         
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-12 mb-5">
+                <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">Más</span>Amor</h1>
+                <p class="m-0">Sé parte del cambio, ayuda a mejorar la calidad de vida de un peludito.</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Contáctanos</h5>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>Manizales</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                        <p><i class="fa fa-envelope mr-2"></i>adoptaamor@gmail.com</p>
+                        <div class="d-flex justify-content-start mt-4">
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Visita nuestros sitios</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Acerca de
+                                Nosotros</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Mascotas</a>
+                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Registrarse</a>
+                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Registrar Mascota</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Recibe Noticias</h5>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0" placeholder="Nombre"
+                                    required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0" placeholder="Correo"
+                                    required="required" />
+                            </div>
+                            <div>
+                                <button class="btn btn-lg btn-primary btn-block border-0"
+                                    type="submit">Registrarse</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white py-4 px-sm-3 px-md-5" style="background: #111111;">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white">
+                    &copy; <a class="text-white font-weight-bold" href="#">MásAmor</a>. All Rights Reserved. Designed by
+                    <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

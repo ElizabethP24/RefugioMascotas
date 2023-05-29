@@ -41,8 +41,18 @@ create table solicitudes (
   id_ref varchar(5) REFERENCES refugios(id_ref) ON DELETE RESTRICT,
   codigo_mas varchar(20) REFERENCES mascotas(codigo_mas) ON DELETE RESTRICT, 
   cedula_per varchar(10) REFERENCES personas(cedula_per) ON DELETE RESTRICT,
-  ciudad_sol varchar(250)
+  ciudad_sol varchar(250),
+  estado varchar(250)
   );
+
+  create table usuarios (
+  id_usuario varchar(5) PRIMARY KEY,
+  nombre_usuario varchar(250),
+  username varchar(250), 
+  password varchar(200),
+  rol varchar(250)
+  );
+
 
 INSERT INTO refugios (id_ref, nombre_ref, nit_ref, direccion_ref, ciudad_ref ,telefono_ref, correo_ref) VALUES ('01','HuellaAmiga', '900949000','cra21 #20-05','Manizales','3187654321','huellaamiga@gmail.com');
 

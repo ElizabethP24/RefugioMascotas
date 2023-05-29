@@ -4040,7 +4040,7 @@ input[type="button"].btn-block {
 }
 
 .nav-tabs {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
 }
 
 .nav-tabs .nav-item {
@@ -4048,7 +4048,7 @@ input[type="button"].btn-block {
 }
 
 .nav-tabs .nav-link {
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
@@ -4083,7 +4083,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #c2d30d;
+  background-color: #b9c71e;
 }
 
 .nav-fill > .nav-link,
@@ -4100,7 +4100,7 @@ input[type="button"].btn-block {
 }
 
 .tab-content > .tab-pane {
-  display: none;
+  display: block;
 }
 
 .tab-content > .active {

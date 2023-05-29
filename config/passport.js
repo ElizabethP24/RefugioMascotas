@@ -1,5 +1,6 @@
 import passport from "passport";
 import {localStrategy} from './strategies/local.strategy.js';
+localStrategy();
 
 export default function passportConfig(app) {
     app.use(passport.initialize());

@@ -1,6 +1,8 @@
 import express from "express";
-const personasRouter = express.Router();
 import sql from '../../config/database.js';
+import passport from 'passport';
+
+const personasRouter = express.Router();
 
 personasRouter.route('/').get(async(req, res) => {
     const personas = await sql`
@@ -21,6 +23,10 @@ personasRouter.route('/create').get((req, res) => {
        res.render('personas/create',{});
 });
 
+personasRouter.route('/perfil').get((req, res) => {
+    res.render('personas/perfil_persona',{});
+});
+
 
 personasRouter.route('/store').post(async (req, res) => {
     const body = req.body;
@@ -38,7 +44,7 @@ personasRouter.route('/store').post(async (req, res) => {
 personasRouter.route('/profile').get ((req, res) => {
     res.json(req.user);
 });
- 
+
   export async function store(body) {
     const personas = await sql`
     insert into personas ${sql(body, 
@@ -93,6 +99,15 @@ export async function getPersonacedula(cedula_per) {
     return personas;
 }
 
+export async function getPersonaUsuario(username) {
+    const personas = await sql`
+      SELECT *
+      FROM personas
+      WHERE username = ${username};`;
+  
+    return personas[0] || null;
+  }
+
 personasRouter.route('/delete/:cedula_per').post((req, res) => {
     const cedula_per = req.params.cedula_per;
     getPersonacedula(cedula_per).then(async(persona) => {
@@ -101,6 +116,8 @@ personasRouter.route('/delete/:cedula_per').post((req, res) => {
         res.redirect('/personas/lista');
     })
 });
+
+
 
     personasRouter.route('/update/:cedula_per').post(async (req, res) => {
     const cedula_per = req.params.cedula_per
@@ -120,5 +137,7 @@ personasRouter.route('/delete/:cedula_per').post((req, res) => {
     where cedula_per = ${cedula_per};`;
     res.redirect('/personas/lista')
    
-})
+});
+
+
 export default personasRouter;
